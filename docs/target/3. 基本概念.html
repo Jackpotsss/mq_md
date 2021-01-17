@@ -1,0 +1,718 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3. 基本概念 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4. 进阶开发.html" />
+    
+    
+    <link rel="prev" href="2. AMQP协议.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="1. RabbitMQ.html">
+            
+                <a href="1. RabbitMQ.html">
+            
+                    
+                    1. RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="2. AMQP协议.html">
+            
+                <a href="2. AMQP协议.html">
+            
+                    
+                    2. AMQP协议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="3. 基本概念.html">
+            
+                <a href="3. 基本概念.html">
+            
+                    
+                    3. 基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="4. 进阶开发.html">
+            
+                <a href="4. 进阶开发.html">
+            
+                    
+                    4. 进阶开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="5. RabbitMQ 服务器运维.html">
+            
+                <a href="5. RabbitMQ 服务器运维.html">
+            
+                    
+                    5. RabbitMQ 服务器运维
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="6. 服务高可用性.html">
+            
+                <a href="6. 服务高可用性.html">
+            
+                    
+                    6. 服务高可用性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="READ-ME.html">
+            
+                <a href="READ-ME.html">
+            
+                    
+                    READ-ME
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3. 基本概念</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3-&#x57FA;&#x672C;&#x6982;&#x5FF5;">3. &#x57FA;&#x672C;&#x6982;&#x5FF5;</h1>
+<p>&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x603B;&#x89C8;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x6982;&#x5FF5;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x751F;&#x4EA7;&#x8005;&#xFF08;Producer&#xFF09;</td>
+<td>&#x6D88;&#x606F;&#x7684;&#x751F;&#x4EA7;&#x8005;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53D1;&#x5E03;&#x6D88;&#x606F;&#x7684;&#x4E00;&#x65B9;&#xFF1B;</td>
+</tr>
+<tr>
+<td>&#x6D88;&#x8D39;&#x8005;&#xFF08;Consumer&#xFF09;</td>
+<td>&#x6D88;&#x606F;&#x7684;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x63A5;&#x53D7;&#x6D88;&#x606F;&#x7684;&#x4E00;&#x65B9;&#xFF1B;</td>
+</tr>
+<tr>
+<td>&#x6D88;&#x606F;&#xFF08;Message&#xFF09;</td>
+<td>&#x6D88;&#x606F;&#x5305;&#x542B;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x6D88;&#x606F;&#x4F53;&#x548C;&#x6807;&#x7B7E;&#xFF1B;</td>
+</tr>
+<tr>
+<td>&#x670D;&#x52A1;&#x8282;&#x70B9;&#xFF08;Broker&#xFF09;</td>
+<td>&#x4E00;&#x4E2A;Broker&#x662F;&#x4E00;&#x4E2A;RabbitMQ&#x670D;&#x52A1;</td>
+</tr>
+<tr>
+<td>&#x8FDE;&#x63A5;&#xFF08;Connection&#xFF09;</td>
+<td>&#x8868;&#x793A;&#x4E00;&#x4E2A;TCP&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td>&#x901A;&#x9053;&#xFF08;Channel&#xFF09;</td>
+<td>&#x5EFA;&#x7ACB;&#x5728;TCP&#x4E0A;&#x7684;&#x865A;&#x62DF;&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td>&#x865A;&#x62DF;&#x4E3B;&#x673A;&#xFF08;vhost&#xFF09;</td>
+<td>&#x7528;&#x4E8E;&#x903B;&#x8F91;&#x9694;&#x79BB;</td>
+</tr>
+<tr>
+<td>&#x4EA4;&#x6362;&#x5668;&#xFF08;Exchange&#xFF09;</td>
+<td>&#x8DEF;&#x7531;&#x6D88;&#x606F;&#x5230;&#x961F;&#x5217;&#x6216;&#x4EA4;&#x6362;&#x5668;</td>
+</tr>
+<tr>
+<td>&#x961F;&#x5217;&#xFF08;Queue&#xFF09;</td>
+<td>&#x5B58;&#x50A8;&#x6D88;&#x606F;</td>
+</tr>
+<tr>
+<td>&#x7ED1;&#x5B9A;&#xFF08;Binding&#xFF09;</td>
+<td>&#x4EA4;&#x6362;&#x5668;&#x4E0E;&#x961F;&#x5217;&#xFF0C;&#x4EA4;&#x6362;&#x5668;&#x4E0E;&#x4EA4;&#x6362;&#x5668;&#x4E4B;&#x95F4;&#x9700;&#x8981;&#x7ED1;&#x5B9A;</td>
+</tr>
+<tr>
+<td>&#x8DEF;&#x7531;&#x952E;&#xFF08;RoutingKey&#xFF09;</td>
+<td>&#x6D88;&#x606F;&#x8DEF;&#x7531;&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;&#x5355;&#x8BCD;&#x4E4B;&#x95F4;&#x7528;&#x82F1;&#x6587;&#x53E5;&#x53F7;&#x9694;&#x5F00;</td>
+</tr>
+<tr>
+<td>AMQP&#x534F;&#x8BAE;</td>
+<td>&#x9AD8;&#x7EA7;&#x6D88;&#x606F;&#x961F;&#x5217;&#x534F;&#x8BAE;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="31-&#x8FDE;&#x63A5;-connection">3.1 &#x8FDE;&#x63A5; Connection</h2>
+<p>&#x200B;    &#x4E00;&#x4E2A;Connection &#x8868;&#x793A;&#x4E00;&#x4E2A;TCP&#x8FDE;&#x63A5;&#xFF0C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x521B;&#x5EFA;&#x548C;&#x65AD;&#x5F00;TCP&#x8FDE;&#x63A5;&#x7684;&#x5F00;&#x9500;&#x5F88;&#x5927;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x4F1A;&#x590D;&#x7528; Connection &#x3002;</p>
+<p>&#x4F7F;&#x7528;Java&#x5BA2;&#x6237;&#x7AEF;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#xFF1A;</p>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">connect</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException, TimeoutException </span>{
+        ConnectionFactory connectionFactory = <span class="hljs-keyword">new</span> ConnectionFactory();
+        connectionFactory.setHost(<span class="hljs-string">&quot;127.0.0.1&quot;</span>);
+        connectionFactory.setPort(<span class="hljs-number">5672</span>);
+        connectionFactory.setUsername(<span class="hljs-string">&quot;guest&quot;</span>);
+        connectionFactory.setPassword(<span class="hljs-string">&quot;guest&quot;</span>);
+        <span class="hljs-comment">//connectionFactory.setVirtualHost(&quot;/&quot;);</span>
+        Connection connection = connectionFactory.newConnection();
+    }
+</code></pre>
+<p>&#x6CE8;&#xFF1A;</p>
+<ul>
+<li>guest &#x7528;&#x6237;&#xFF08;&#x5BC6;&#x7801; guest&#xFF09;&#x662F;RabbitMQ&#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x7684;&#x8D85;&#x7EA7;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x5F00;&#x53D1;&#x4E2D;&#x5E94;&#x8BE5;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x7528;&#x6237;&#x6765;&#x8FDE;&#x63A5;MQ&#x670D;&#x52A1;&#x5668;&#x3002;</li>
+<li>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F1A;&#x6709;&#x591A;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x540C;&#x65F6;&#x8FDE;&#x63A5;RabbitMQ&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E94;&#x5F53;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#xFF0C;&#x4EE5;&#x4FBF;&#x533A;&#x5206;&#x6BCF;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;&#x60C5;&#x51B5;&#x3002;</li>
+<li>&#x865A;&#x62DF;&#x4E3B;&#x673A;&#x662F;&#x5EFA;&#x7ACB;&#x5728;&#x8FDE;&#x63A5;&#x4E0A;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&quot;/&quot;&#x3002;</li>
+</ul>
+<h2 id="32-&#x901A;&#x9053;-channel">3.2 &#x901A;&#x9053; Channel</h2>
+<p>&#x200B;    &#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#xFF08;Connection&#xFF09;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x51FA;&#x591A;&#x4E2A;&#x901A;&#x9053;&#x5B9E;&#x4F8B;&#xFF08;Channel&#xFF09;&#xFF0C;Channel &#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x865A;&#x62DF;&#x8FDE;&#x63A5;&#xFF0C;&#x591A;&#x4E2A;Channel &#x5171;&#x7528;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#xFF0C;&#x8282;&#x7701;&#x8D44;&#x6E90;&#x7684;&#x540C;&#x65F6;&#x6700;&#x5927;&#x5316;&#x5229;&#x7528;&#x8D44;&#x6E90;&#x3002;</p>
+<p><img src="https://gitee.com/Jackpotsss/pic_go/raw/master/img/image-20200823094508592.png" alt="image-20200823094508592" style="zoom:80%;"></p>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Channel&#xFF1A;</p>
+<pre><code class="lang-java">Channel channel = connection.createChannel();
+</code></pre>
+<p>&#x200B;    &#x65E0;&#x8BBA;&#x751F;&#x4EA7;&#x8005;&#x8FD8;&#x662F;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;RabbitMQ&#x670D;&#x52A1;&#x5668;&#x7684;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x4EA4;&#x4E92;&#x90FD;&#x662F;&#x901A;&#x8FC7; Channel &#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#x3002;RabbitMQ&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x7684;Java&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x5305;&#x540D;&#x4E3A; <code>com.rabbitmq.client</code> &#xFF0C;<strong>Channel &#x63A5;&#x53E3;</strong>&#x5B9A;&#x4E49;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6240;&#x6709;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x8981;&#x5168;&#x9762;&#x4E86;&#x89E3;Channel &#x7684;&#x529F;&#x80FD;&#xFF0C;Channel&#x63A5;&#x53E3;&#x5E94;&#x8BE5;&#x91CD;&#x70B9;&#x4E86;&#x89E3;&#x3002;</p>
+<p>&#x200B;    &#x521B;&#x5EFA;&#x5B8C;Channel &#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x58F0;&#x660E;&#x4EA4;&#x6362;&#x5668;&#x548C;&#x961F;&#x5217;&#xFF0C;&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#xFF0C;&#x53D1;&#x9001;&#x6216;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x4E86;&#x3002;</p>
+<p>:warning: &#x7279;&#x522B;&#x6CE8;&#x610F;:</p>
+<p>&#x200B;    <strong>&#x901A;&#x9053; Channel &#x5E76;&#x4E0D;&#x662F;&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x80FD;&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x64CD;&#x4F5C;&#x3002;&#x5E94;&#x8BE5;&#x6BCF;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;Channel&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x591A;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x5171;&#x7528;&#x4E00;&#x4E2A;Channel&#x3002;</strong> </p>
+<h2 id="33-&#x4EA4;&#x6362;&#x5668;&#xFF08;exchange&#xFF09;">3.3 &#x4EA4;&#x6362;&#x5668;&#xFF08;Exchange&#xFF09;</h2>
+<p><strong>&#x4EA4;&#x6362;&#x5668;&#x3001;&#x961F;&#x5217;&#x548C;&#x7ED1;&#x5B9A;&#x662F;RabbitMQ&#x7684;&#x4E09;&#x5927;&#x7EC4;&#x4EF6;&#x3002;</strong> </p>
+<p>&#x4EA4;&#x6362;&#x5668;&#x7528;&#x6765;&#x8DEF;&#x7531;&#x6D88;&#x606F;&#xFF0C;RabbitMQ&#x4E2D;&#x5C06;&#x6D88;&#x606F;&#x8DEF;&#x7531;&#x5230;&#x961F;&#x5217;&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+<h3 id="&#x521B;&#x5EFA;&#x4EA4;&#x6362;&#x5668;">&#x521B;&#x5EFA;&#x4EA4;&#x6362;&#x5668;</h3>
+<p>&#x521B;&#x5EFA;&#x4EA4;&#x6362;&#x5668;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x975E;&#x6301;&#x4E45;&#x5316;&#x3001;&#x975E;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x7684; direct &#x7C7B;&#x578B;&#x7684;&#x4EA4;&#x6362;&#x5668;</span>
+channel.exchangeDeclare(exchangeName, BuiltinExchangeType.DIRECT);
+<span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6301;&#x4E45;&#x5316;&#x3001;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3001;&#x516C;&#x5F00;&#x7684; topic &#x7C7B;&#x578B;&#x7684;&#x4EA4;&#x6362;&#x5668;</span>
+channel.exchangeDeclare(exchangeName, BuiltinExchangeType.TOPIC,<span class="hljs-keyword">true</span>,<span class="hljs-keyword">true</span>,<span class="hljs-keyword">false</span>,<span class="hljs-keyword">null</span>);
+</code></pre>
+<p>exchangeDeclare &#x65B9;&#x6CD5;&#x6709;&#x591A;&#x4E2A;&#x91CD;&#x8F7D;&#xFF0C;&#x5B83;&#x4EEC;&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x8C03;&#x7528;&#x53C2;&#x6570;&#x6700;&#x5168;&#x7684;&#x4E00;&#x4E2A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Channel</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AutoCloseable</span> </span>{
+
+  Exchange.<span class="hljs-function">DeclareOk <span class="hljs-title">exchangeDeclare</span><span class="hljs-params">(String exchange, BuiltinExchangeType type, <span class="hljs-keyword">boolean</span> durable,
+            <span class="hljs-keyword">boolean</span> autoDelete, <span class="hljs-keyword">boolean</span> internal, Map&lt;String, Object&gt; arguments)</span> <span class="hljs-keyword">throws</span> IOException</span>;  
+}
+</code></pre>
+<p>&#x53C2;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5C5E;&#x6027;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange</td>
+<td>&#x4EA4;&#x6362;&#x5668;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>type</td>
+<td>&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>durable</td>
+<td>&#x662F;&#x5426;&#x6301;&#x4E45;&#x5316;</td>
+</tr>
+<tr>
+<td>autoDelete</td>
+<td>&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5220;&#x9664;</td>
+</tr>
+<tr>
+<td>internal</td>
+<td>&#x662F;&#x5426;&#x5185;&#x90E8;&#x4EA4;&#x6362;&#x5668;</td>
+</tr>
+<tr>
+<td>arguments</td>
+<td>&#x53C2;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8BE6;&#x89E3;&#xFF1A;</p>
+<p>&#x200B;    type&#xFF1A;&#x4EA4;&#x6362;&#x5668;&#x5171;&#x6709;&#x56DB;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;direct&#x3001;topic &#x3001;fanout &#x3001;headers &#xFF1B;</p>
+<p>&#x200B;    durable&#xFF1A;&#x662F;&#x5426;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x6301;&#x4E45;&#x5316;&#x53EF;&#x4EE5;&#x5C06;&#x4EA4;&#x6362;&#x5668;&#x5B58;&#x50A8;&#x5230;&#x78C1;&#x76D8;&#xFF0C;&#x5982;&#x679C;&#x4EA4;&#x6362;&#x5668;&#x6CA1;&#x6709;&#x88AB;&#x5220;&#x9664;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x91CD;&#x542F;&#x540E;&#x4E0D;&#x4F1A;&#x4E22;&#x5931;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x200B;    autoDelete&#xFF1A;&#x8BBE;&#x7F6E;&#x4E3A; true &#x8868;&#x793A;&#x81EA;&#x52A8;&#x5220;&#x9664;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x4EA4;&#x6362;&#x5668;&#x81F3;&#x5C11;&#x88AB;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x6216;&#x4EA4;&#x6362;&#x5668;&#x7ED1;&#x5B9A;&#x8FC7;&#xFF0C;&#x5E76;&#x4E14;&#x4E4B;&#x540E;&#x6240;&#x6709;&#x7ED1;&#x5B9A;&#x7684;&#x961F;&#x5217;&#x6216;&#x4EA4;&#x6362;&#x5668;&#x90FD;&#x4E0E;&#x4E4B;&#x89E3;&#x7ED1;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x4EA4;&#x6362;&#x5668;&#x5C06;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3002;&#x8FD9;&#x4E2A;&#x5730;&#x65B9;&#x5BB9;&#x6613;&#x9519;&#x8BEF;&#x7406;&#x89E3;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x4EA4;&#x6362;&#x5668;&#x4ECE;&#x6CA1;&#x6709;&#x88AB;&#x7ED1;&#x5B9A;&#x8FC7;&#xFF0C;&#x90A3;&#x4E48;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3002;</p>
+<p>&#x200B;    internal &#xFF1A;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x4E3A;&#x5185;&#x7F6E;&#x4EA4;&#x6362;&#x5668;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5185;&#x7F6E;&#x4EA4;&#x6362;&#x5668;&#xFF0C;&#x5219;&#x751F;&#x4EA7;&#x8005;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5230;&#x5185;&#x7F6E;&#x4EA4;&#x6362;&#x5668;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x4EA4;&#x6362;&#x5668;&#x8DEF;&#x7531;&#x5230;&#x4EA4;&#x6362;&#x5668;&#x8FD9;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x200B;    arguments&#xFF1A;key-value &#x5F62;&#x5F0F;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5982; alternate-exchange&#x7B49;&#x3002;</p>
+<h3 id="&#x56DB;&#x79CD;&#x4EA4;&#x6362;&#x5668;&#x7C7B;&#x578B;">&#x56DB;&#x79CD;&#x4EA4;&#x6362;&#x5668;&#x7C7B;&#x578B;</h3>
+<p>&#x4EA4;&#x6362;&#x5668;&#x7C7B;&#x578B;&#x6709;&#x56DB;&#x79CD;:</p>
+<ul>
+<li>direct    &#x76F4;&#x63A5;&#x8DEF;&#x7531;</li>
+<li>topic &#x4E3B;&#x9898;&#x8DEF;&#x7531;</li>
+<li>fanout  &#x5E7F;&#x64AD;&#x8DEF;&#x7531;</li>
+<li>headers  &#x5934;&#x90E8;&#x4FE1;&#x606F;&#x8DEF;&#x7531;</li>
+</ul>
+<p><strong>direct &#x76F4;&#x63A5;&#x8DEF;&#x7531;</strong> </p>
+<p>&#x8DEF;&#x7531;&#x89C4;&#x5219;&#xFF1A;</p>
+<p>&#x200B;    &#x6839;&#x636E;Routing Key = Bounding Key &#x7684;&#x89C4;&#x5219;&#x8DEF;&#x7531;&#x6D88;&#x606F;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<p>&#x200B;    &#x533A;&#x5206;&#x53D1;&#x5F80;&#x540C;&#x4E00;&#x4E2A;&#x4EA4;&#x6362;&#x5668;&#x7684;&#x6D88;&#x606F;&#x3002;</p>
+<p><img src="https://gitee.com/Jackpotsss/pic_go/raw/master/img/image-20200819153123309.png" alt="image-20200819153123309" style="zoom: 80%;"></p>
+<p><strong>topic &#x4E3B;&#x9898;&#x8DEF;&#x7531;</strong> </p>
+<p>&#x8DEF;&#x7531;&#x89C4;&#x5219;&#xFF1A;</p>
+<p>&#x200B;    &#x6839;&#x636E;&#x901A;&#x914D;&#x7B26;&#x5339;&#x914D;&#x8DEF;&#x7531;&#x6D88;&#x606F;&#x3002;</p>
+<ul>
+<li>&#x661F;&#x53F7; <code>*</code> &#x4EE3;&#x529E;<strong>&#x96F6;&#x4E2A;&#x6216;&#x4E00;&#x4E2A;</strong>&#x5355;&#x8BCD;&#x3002;&#x4F8B;&#x5982;&#xFF1A;com</li>
+<li>&#x4E95;&#x53F7; <code>#</code> &#x4EE3;&#x529E;<strong>&#x96F6;&#x4E2A;&#x3001;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;</strong>&#x5355;&#x8BCD;&#xFF0C;&#x5355;&#x8BCD;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x82F1;&#x6587;&#x53E5;&#x53F7; <code>.</code> &#x9694;&#x5F00;&#x3002;&#x4F8B;&#x5982;&#xFF1A;amqp.org.doc</li>
+</ul>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<p>&#x200B;    &#x901A;&#x8FC7;&#x4E3B;&#x9898;&#x5BF9;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x533A;&#x5206;&#x3002;</p>
+<p><img src="https://gitee.com/Jackpotsss/pic_go/raw/master/img/image-20200819153814381.png" alt="image-20200819153814381" style="zoom:80%;"></p>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<p><strong>fanout &#x5E7F;&#x64AD;&#x8DEF;&#x7531;</strong> </p>
+<p>&#x8DEF;&#x7531;&#x89C4;&#x5219;&#xFF1A;</p>
+<p>&#x200B;    fanout Exchange &#x65E0;&#x89C6;Bonding Key &#x7684;&#x5339;&#x914D;&#x89C4;&#x5219;&#xFF0C;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5230;&#x4E0E;&#x8BE5;&#x4EA4;&#x6362;&#x5668;&#x7ED1;&#x5B9A;&#x7684;&#x6240;&#x6709;&#x961F;&#x5217;&#x4E2D;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<p>&#x200B;    &#x5E7F;&#x64AD;&#x6D88;&#x606F;&#x3002;</p>
+<p><img src="https://gitee.com/Jackpotsss/pic_go/raw/master/img/image-20200819154925203.png" alt="image-20200819154925203" style="zoom:80%;"></p>
+<p><strong>headers &#x5934;&#x90E8;&#x4FE1;&#x606F;&#x8DEF;&#x7531;</strong> </p>
+<p>&#x200B;    headers &#x7C7B;&#x578B;&#x7684;&#x4EA4;&#x6362;&#x5668;&#x65E0;&#x89C6;&#x8DEF;&#x7531;&#x952E;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5728;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#xFF0C;BasicProperties &#x6709;&#x4E00;&#x4E2A; headers &#x5C5E;&#x6027;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;key-value &#x5F62;&#x5F0F;&#x7684;&#x5934;&#x90E8;&#x4FE1;&#x606F;&#x3002;&#x4EA4;&#x6362;&#x5668;&#x548C;&#x961F;&#x91CC;&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#x65F6;&#xFF0C;&#x4E5F;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;key-value &#x5F62;&#x5F0F;&#x7684;&#x7ED1;&#x5B9A;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x4EA4;&#x6362;&#x5668;&#x662F; headers &#x7C7B;&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E24;&#x7EC4;&#x952E;&#x503C;&#x5BF9;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x65F6;&#x624D;&#x80FD;&#x8DEF;&#x7531;&#x6210;&#x529F;&#x3002;</p>
+<p>&#x200B;    </p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7684;&#x5934;&#x90E8;&#x53C2;&#x6570;</span>
+HashMap&lt;String, Object&gt; args = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+args.put(<span class="hljs-string">&quot;userid&quot;</span>,<span class="hljs-number">10</span>);      
+AMQP.BasicProperties.Builder builder = <span class="hljs-keyword">new</span> AMQP.BasicProperties().builder();
+builder.headers(args);
+AMQP.BasicProperties basicProperties = builder.build();
+channel.basicPublish(orderExchange,<span class="hljs-string">&quot;com.rabbitmq.&quot;</span>,<span class="hljs-keyword">true</span>,basicProperties,message.getBytes());
+<span class="hljs-comment">//&#x7ED1;&#x5B9A;&#x53C2;&#x6570;</span>
+    Queue.<span class="hljs-function">BindOk <span class="hljs-title">queueBind</span><span class="hljs-params">(String queue, String exchange, String routingKey, Map&lt;String, Object&gt; arguments)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<p>&#x6CE8;:</p>
+<p>&#x200B;    headers &#x7C7B;&#x578B;&#x7684;&#x4EA4;&#x6362;&#x5668;&#x6548;&#x7387;&#x4F4E;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x5B9E;&#x7528;&#xFF0C;&#x5F88;&#x5C11;&#x4F1A;&#x4F7F;&#x7528;&#x5B83;&#x3002;</p>
+<h3 id="&#x5220;&#x9664;&#x4EA4;&#x6362;&#x5668;">&#x5220;&#x9664;&#x4EA4;&#x6362;&#x5668;</h3>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x5220;&#x9664;&#x4EA4;&#x6362;&#x5668;</span>
+channel.exchangeDelete(exchangeName);
+</code></pre>
+<h2 id="34-&#x961F;&#x5217;&#xFF08;queue&#xFF09;">3.4 &#x961F;&#x5217;&#xFF08;Queue&#xFF09;</h2>
+<p>RabbitMQ&#x4E2D;&#x5B58;&#x50A8;&#x6D88;&#x606F;&#x7684;&#x7F13;&#x5B58;&#x533A;&#xFF0C;&#x5148;&#x8FDB;&#x5148;&#x51FA;FIFO&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</p>
+<p>RabbitMQ&#x4E2D;&#x7684;&#x6D88;&#x606F;&#x53EA;&#x80FD;&#x5B58;&#x5165;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x961F;&#x5217;&#x5FC5;&#x987B;&#x7ED1;&#x5B9A;&#x4EA4;&#x6362;&#x5668;&#x3002;</p>
+<p>&#x591A;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x53EF;&#x4EE5;&#x8FDE;&#x63A5;&#x540C;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x961F;&#x5217;&#x4E2D;&#x6D88;&#x606F;&#x88AB;&#x591A;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x8F6E;&#x8BE2;&#x6D88;&#x8D39;&#xFF0C;&#x4F46;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#x53EA;&#x4F1A;&#x88AB;&#x6D88;&#x8D39;&#x4E00;&#x6B21;&#x3002;</p>
+<p>&#x961F;&#x5217;&#x53EA;&#x80FD;&#x548C;&#x4EA4;&#x6362;&#x5668;&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#xFF0C;&#x800C;&#x4EA4;&#x6362;&#x5668;&#x65E2;&#x53EF;&#x4EE5;&#x548C;&#x961F;&#x5217;&#x7ED1;&#x5B9A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x548C;&#x4EA4;&#x6362;&#x5668;&#x7ED1;&#x5B9A;&#x3002;&#x5185;&#x90E8;&#x4EA4;&#x6362;&#x5668;&#x53EA;&#x80FD;&#x4E0E;&#x4EA4;&#x6362;&#x5668;&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#x3002;</p>
+<h3 id="&#x58F0;&#x660E;&#x961F;&#x5217;">&#x58F0;&#x660E;&#x961F;&#x5217;</h3>
+<p>Channel &#x58F0;&#x660E;&#x961F;&#x5217;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Channel</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AutoCloseable</span> </span>{
+
+    <span class="hljs-comment">//&#x58F0;&#x660E;&#x961F;&#x5217;:MQ&#x670D;&#x52A1;&#x5668;&#x81EA;&#x52A8;&#x547D;&#x540D;,&#x81EA;&#x52A8;&#x5220;&#x9664;,&#x975E;&#x6301;&#x4E45;&#x5316;&#x7684;&#x961F;&#x5217;</span>
+    Queue.<span class="hljs-function">DeclareOk <span class="hljs-title">queueDeclare</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException</span>;
+
+    <span class="hljs-comment">//&#x58F0;&#x660E;&#x961F;&#x5217;:&#x6307;&#x5B9A;&#x961F;&#x5217;&#x540D;&#x79F0;,&#x662F;&#x5426;&#x6301;&#x4E45;&#x5316;,&#x662F;&#x5426;&#x6392;&#x4ED6;,&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5220;&#x9664;,&#x53C2;&#x6570;</span>
+    Queue.<span class="hljs-function">DeclareOk <span class="hljs-title">queueDeclare</span><span class="hljs-params">(String queue, <span class="hljs-keyword">boolean</span> durable, <span class="hljs-keyword">boolean</span> exclusive, <span class="hljs-keyword">boolean</span> autoDelete,
+                                 Map&lt;String, Object&gt; arguments)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+    <span class="hljs-comment">//&#x5F02;&#x6B65;&#x58F0;&#x660E;&#x961F;&#x5217;:&#x4E0D;&#x4FDD;&#x8BC1;&#x961F;&#x5217;&#x58F0;&#x660E;&#x6210;&#x529F;;</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">queueDeclareNoWait</span><span class="hljs-params">(String queue, <span class="hljs-keyword">boolean</span> durable, <span class="hljs-keyword">boolean</span> exclusive, <span class="hljs-keyword">boolean</span> autoDelete,
+                            Map&lt;String, Object&gt; arguments)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+    <span class="hljs-comment">//&#x67E5;&#x8BE2;&#x961F;&#x5217;&#x662F;&#x5426;&#x5B58;&#x5728;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x629B;&#x51FA; IOException &#x5F02;&#x5E38;&#xFF0C;&#x5E76;&#x5173;&#x95ED; channel</span>
+    Queue.<span class="hljs-function">DeclareOk <span class="hljs-title">queueDeclarePassive</span><span class="hljs-params">(String queue)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+}
+</code></pre>
+<p>queue&#xFF1A;</p>
+<p>&#x200B;    &#x961F;&#x5217;&#x540D;&#x79F0;</p>
+<p>durable&#xFF1A;</p>
+<p>&#x200B;    &#x662F;&#x5426;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x5B58;&#x5165;&#x78C1;&#x76D8;&#xFF0C;&#x670D;&#x52A1;&#x91CD;&#x542F;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x4E22;&#x5931;&#x3002;</p>
+<p>exclusive&#xFF1A;</p>
+<p>&#x200B;    &#x662F;&#x5426;&#x6392;&#x4ED6;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;&#x6392;&#x4ED6;&#x961F;&#x5217;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x961F;&#x5217;&#x4EC5;&#x5BF9;&#x9996;&#x6B21;&#x58F0;&#x660E;&#x5B83;&#x7684;&#x8FDE;&#x63A5;&#x53EF;&#x89C1;&#xFF0C;&#x5E76;&#x4E14;&#x5F53;&#x8FDE;&#x63A5;&#x65AD;&#x5F00;&#x65F6;&#xFF0C;&#x961F;&#x5217;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3002;&#x6392;&#x4ED6;&#x961F;&#x5217;&#x9002;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;&#x540C;&#x65F6;&#x53D1;&#x9001;&#x548C;&#x8BFB;&#x53D6;&#x6D88;&#x606F;&#x7684;&#x573A;&#x666F;&#x3002;</p>
+<p>autoDelete&#xFF1A;</p>
+<p>&#x200B;    &#x662F;&#x5426;&#x81EA;&#x52A8;&#x5220;&#x9664;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;true&#x8868;&#x793A;&#x81EA;&#x52A8;&#x5220;&#x9664;&#xFF0C;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x7684;&#x524D;&#x63D0;&#x662F;&#x4E4B;&#x524D;<strong>&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x8FDE;&#x63A5;&#x5230;&#x8FD9;&#x4E2A;&#x961F;&#x5217;</strong>&#xFF0C;&#x5E76;&#x4E14;&#x4E4B;&#x540E;<strong>&#x6240;&#x6709;&#x7684;&#x8FDE;&#x63A5;&#x90FD;&#x65AD;&#x5F00;</strong>&#x65F6;&#xFF0C;&#x961F;&#x5217;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3002;&#x5982;&#x679C;&#x4ECE;&#x6CA1;&#x6709;&#x6D88;&#x8D39;&#x8005;&#x8FDE;&#x63A5;&#x8FC7;&#x8FD9;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x961F;&#x5217;&#x662F;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x7684;&#x3002;</p>
+<p>arguments:</p>
+<p>&#x200B;    &#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x7684;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#xFF08;&#x952E;&#x503C;&#x5BF9;&#x5F62;&#x5F0F;&#xFF09;&#x3002;</p>
+<h3 id="&#x5E38;&#x7528;&#x53C2;&#x6570;">&#x5E38;&#x7528;&#x53C2;&#x6570;</h3>
+<pre><code class="lang-properties"># &#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x4E2D;&#x6D88;&#x606F;&#x6700;&#x5927;&#x6761;&#x6570;
+x-max-length
+# &#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x5B57;&#x8282;&#xFF09;
+x-max-length-bytes
+# &#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x4E2D;&#x6D88;&#x606F;&#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x6BEB;&#x79D2;&#xFF09;
+x-message-ttl
+# &#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x6BEB;&#x79D2;&#xFF09;
+x-expires
+# &#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x7684;&#x6700;&#x5927;&#x4F18;&#x5148;&#x7EA7;
+x-max-priority
+# &#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x7684;&#x6B7B;&#x4FE1;&#x4EA4;&#x6362;&#x5668;
+x-dead-letter-exchange
+# &#x8BBE;&#x7F6E;&#x6B7B;&#x4FE1;&#x4EA4;&#x6362;&#x5668;&#x7684;&#x8DEF;&#x7531;&#x952E;
+x-dead-letter-routing-key
+</code></pre>
+<p>&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x5BF9;&#x5E94;&#x7740;&#x76F8;&#x5E94;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E0B;&#x9762;&#x4F1A;&#x5206;&#x522B;&#x8BE6;&#x7EC6;&#x8BB2;&#x89E3;&#x3002;</p>
+<h3 id="&#x6E05;&#x7A7A;&#x961F;&#x5217;">&#x6E05;&#x7A7A;&#x961F;&#x5217;</h3>
+<p>&#x4F7F;&#x7528; channel.queuePurge &#x6E05;&#x7A7A;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6D88;&#x606F;&#xFF0C;&#x961F;&#x5217;&#x672C;&#x8EAB;&#x4E0D;&#x5220;&#x9664;&#x3002;</p>
+<pre><code class="lang-java">channel.queuePurge(queueName);
+</code></pre>
+<h3 id="&#x5220;&#x9664;&#x961F;&#x5217;">&#x5220;&#x9664;&#x961F;&#x5217;</h3>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x5220;&#x9664;&#x961F;&#x5217;</span>
+channel.queueDelete(queueName);
+</code></pre>
+<h2 id="35-&#x7ED1;&#x5B9A;&#xFF08;binding&#xFF09;">3.5 &#x7ED1;&#x5B9A;&#xFF08;Binding&#xFF09;</h2>
+<p>&#x4EA4;&#x6362;&#x5668;&#x4E0E;&#x961F;&#x5217;&#x7684;&#x5173;&#x8054;&#x89C4;&#x5219;&#xFF0C;&#x901A;&#x8FC7; Binding Key &#x5C06;<strong>&#x4EA4;&#x6362;&#x5668;&#x4E0E;&#x961F;&#x5217;</strong>&#x6216;<strong>&#x4EA4;&#x6362;&#x5668;&#x4E0E;&#x4EA4;&#x6362;&#x5668;</strong>&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#x3002;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x7ED1;&#x5B9A;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x3002;</p>
+<p>API&#xFF1A;</p>
+<p>&#x4EA4;&#x6362;&#x5668;&#x548C;&#x961F;&#x5217;&#x7684;&#x7ED1;&#x5B9A;&#x548C;&#x89E3;&#x7ED1;:</p>
+<pre><code class="lang-java">    <span class="hljs-comment">//&#x7ED1;&#x5B9A;&#x4EA4;&#x6362;&#x5668;&#x548C;&#x961F;&#x5217;</span>
+    Queue.<span class="hljs-function">BindOk <span class="hljs-title">queueBind</span><span class="hljs-params">(String queue, String exchange, String routingKey, Map&lt;String, Object&gt; arguments)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">queueBindNoWait</span><span class="hljs-params">(String queue, String exchange, String routingKey, Map&lt;String, Object&gt; arguments)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+    <span class="hljs-comment">//&#x89E3;&#x7ED1;&#x961F;&#x5217;&#x548C;&#x4EA4;&#x6362;&#x5668;</span>
+    Queue.<span class="hljs-function">UnbindOk <span class="hljs-title">queueUnbind</span><span class="hljs-params">(String queue, String exchange, String routingKey)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<p>&#x4EA4;&#x6362;&#x5668;&#x548C;&#x4EA4;&#x6362;&#x5668;&#x7684;&#x7ED1;&#x5B9A;&#x548C;&#x89E3;&#x7ED1;:</p>
+<pre><code class="lang-java">    Exchange.<span class="hljs-function">BindOk <span class="hljs-title">exchangeBind</span><span class="hljs-params">(String destination, String source, String routingKey, Map&lt;String, Object&gt; arguments)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">exchangeBindNoWait</span><span class="hljs-params">(String destination, String source, String routingKey, Map&lt;String, Object&gt; arguments)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+
+    Exchange.<span class="hljs-function">UnbindOk <span class="hljs-title">exchangeUnbind</span><span class="hljs-params">(String destination, String source, String routingKey)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<p>&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7684;&#x8DEF;&#x7531;&#x952E;&#x3001;&#x4EA4;&#x6362;&#x5668;&#x7C7B;&#x578B;&#x3001;&#x7ED1;&#x5B9A;&#x952E;&#x5171;&#x540C;&#x51B3;&#x5B9A;&#x4E86;&#x6D88;&#x606F;&#x88AB;&#x8DEF;&#x7531;&#x5230;&#x54EA;&#x4E2A;&#x961F;&#x5217;&#x3002;</p>
+<h2 id="36-&#x53D1;&#x9001;&#x6D88;&#x606F;">3.6 &#x53D1;&#x9001;&#x6D88;&#x606F;</h2>
+<p>&#x901A;&#x8FC7; <code>channel.basicPublish</code> &#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5230;&#x4EA4;&#x6362;&#x5668;&#xFF1A;</p>
+<p>API&#xFF1A;</p>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">basicPublish</span><span class="hljs-params">(String exchange, String routingKey, BasicProperties props, <span class="hljs-keyword">byte</span>[] body)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">basicPublish</span><span class="hljs-params">(String exchange, String routingKey, <span class="hljs-keyword">boolean</span> mandatory, BasicProperties props, <span class="hljs-keyword">byte</span>[] body)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">basicPublish</span><span class="hljs-params">(String exchange, String routingKey, <span class="hljs-keyword">boolean</span> mandatory, <span class="hljs-keyword">boolean</span> immediate, BasicProperties props, <span class="hljs-keyword">byte</span>[] body)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<pre><code class="lang-java">AMQP.BasicProperties.Builder builder = <span class="hljs-keyword">new</span> AMQP.BasicProperties().builder();
+builder.deliveryMode(<span class="hljs-number">2</span>).<span class="hljs-comment">//&#x6301;&#x4E45;&#x5316;&#x6D88;&#x606F;</span>
+    priority(<span class="hljs-number">6</span>);        <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6D88;&#x606F;&#x4F18;&#x5148;&#x7EA7;</span>
+AMQP.BasicProperties basicProperties = builder.build();
+<span class="hljs-comment">//&#x53D1;&#x9001;&#x6D88;&#x606F;</span>
+channel.basicPublish(orderExchange,routingKey,<span class="hljs-keyword">true</span>,basicProperties,message);
+</code></pre>
+<p><strong>mandatory &#x53C2;&#x6570;:</strong> </p>
+<p>&#x200B;    &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x65F6;&#x5982;&#x679C;&#x4EA4;&#x6362;&#x5668;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x8DEF;&#x7531;&#x952E;&#x65E0;&#x6CD5;&#x5339;&#x914D;&#x5230;&#x961F;&#x5217;&#xFF0C;&#x6D88;&#x606F;&#x5C06;&#x4E22;&#x5F03;&#x3002;&#x8BBE;&#x7F6E; mandatory &#x53C2;&#x6570;&#x4E3A;true&#xFF0C;RabbitMQ&#x5C06;&#x4F1A;&#x901A;&#x8FC7; Basic.Return &#x547D;&#x4EE4;&#x628A;&#x6D88;&#x606F;<strong>&#x8FD4;&#x8FD8;</strong>&#x7ED9;&#x751F;&#x4EA7;&#x8005;&#x3002;</p>
+<p><strong>immediate &#x53C2;&#x6570;:</strong> </p>
+<p>&#x200B;    &#x5982;&#x679C;immediate &#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;true&#xFF0C;&#x6D88;&#x606F;&#x88AB;&#x8DEF;&#x7531;&#x5230;&#x961F;&#x5217;&#x540E;&#xFF0C;&#x53D1;&#x73B0;&#x961F;&#x5217;&#x4E0A;&#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x4EFB;&#x4F55;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x6761;&#x6D88;&#x606F;&#x4E0D;&#x4F1A;&#x5B58;&#x5165;&#x5F53;&#x524D;&#x961F;&#x5217;&#xFF1B;&#x5982;&#x679C;&#x8DEF;&#x7531;&#x5230;&#x7684;&#x6240;&#x6709;&#x961F;&#x5217;&#x90FD;&#x6CA1;&#x6709;&#x6D88;&#x8D39;&#x8005;&#x65F6;&#xFF0C;MQ&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x901A;&#x8FC7;Basic.Return &#x547D;&#x4EE4;&#x628A;&#x6D88;&#x606F;<strong>&#x8FD4;&#x8FD8;</strong>&#x7ED9;&#x751F;&#x4EA7;&#x8005;&#x3002;</p>
+<pre><code class="lang-java">channel.basicPublish(orderExchange,routing,<span class="hljs-keyword">true</span>,basicProperties,message);
+channel.addReturnListener(<span class="hljs-keyword">new</span> ReturnListener() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleReturn</span><span class="hljs-params">(<span class="hljs-keyword">int</span> replyCode, String replyText, String exchange, String routingKey,             AMQP.BasicProperties properties, <span class="hljs-keyword">byte</span>[] body)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        String message = <span class="hljs-keyword">new</span> String(body);
+        System.out.println(<span class="hljs-string">&quot;&#x6D88;&#x606F;&#x6295;&#x9012;&#x5931;&#x8D25;,&#x6D88;&#x606F;&#x8FD4;&#x56DE;: &quot;</span>+message);
+    }
+});
+</code></pre>
+<p>&#x200B;    mandatory &#x548C; immediate &#x53C2;&#x6570;&#x6709;&#x4E00;&#x4E2A;&#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x8FD4;&#x56DE;&#x76D1;&#x542C;&#x4E86;&#x3002;&#x5982;&#x679C;&#x90FD;&#x8BBE;&#x7F6E;&#x4E3A;true&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x7684;&#x6D88;&#x606F;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x4EA4;&#x6362;&#x5668;&#x5339;&#x914D;&#x4E0D;&#x5230;&#x961F;&#x5217;&#xFF0C;&#x53C8;&#x6216;&#x8005;&#x662F;&#x6240;&#x6709;&#x5339;&#x914D;&#x7684;&#x961F;&#x5217;&#x4E0A;&#x6CA1;&#x6709;&#x6D88;&#x8D39;&#x8005;&#x4EA7;&#x751F;&#x7684;&#x3002;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x4E0D;&#x8BBE;&#x7F6E;&#x6216;&#x90FD;&#x4E3A;false&#xFF0C;&#x5219;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x589E;&#x52A0;&#x8FD4;&#x56DE;&#x76D1;&#x542C;&#x3002;</p>
+<p>&#x6CE8;&#xFF1A;</p>
+<p>&#x200B;    immediate &#x53C2;&#x6570;&#x4E0D;&#x5EFA;&#x8BAE;&#x53BB;&#x8BBE;&#x7F6E;&#x4F7F;&#x7528;&#xFF0C;&#x9996;&#x5148;&#x4F1A;&#x964D;&#x4F4E;&#x6548;&#x7387;&#xFF0C;&#x5176;&#x6B21;&#x4F1A;&#x9020;&#x6210;&#x591A;&#x79CD;&#x7ED3;&#x679C;&#xFF0C;&#x5982;&#x679C;&#x6D88;&#x606F;&#x88AB;&#x8DEF;&#x7531;&#x5230;&#x4E24;&#x4E2A;&#x961F;&#x5217;&#xFF0C;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x4E0A;&#x6709;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x6D88;&#x606F;&#x4E0D;&#x4F1A;&#x5B58;&#x5165;&#x65E0;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x961F;&#x5217;&#xFF0C;&#x800C;&#x4E14;&#x6D88;&#x606F;&#x4E0D;&#x4F1A;&#x8FD4;&#x8FD8;&#x7ED9;&#x751F;&#x4EA7;&#x8005;&#x3002;&#x5982;&#x679C;&#x60F3;&#x5B9E;&#x73B0;immediate &#x53C2;&#x6570;&#x76F8;&#x5173;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BBE;&#x7F6E;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x6765;&#x4EE3;&#x66FF;&#x3002;</p>
+<h2 id="37-&#x63A5;&#x6536;&#x6D88;&#x606F;">3.7 &#x63A5;&#x6536;&#x6D88;&#x606F;</h2>
+<p>&#x6D88;&#x8D39;&#x8005;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x63A5;&#x6536;&#x6D88;&#x606F;&#xFF0C;&#x81EA;&#x52A8;&#x63A8;&#x9001;&#x548C;&#x624B;&#x52A8;&#x83B7;&#x53D6;&#xFF0C;&#x4E5F;&#x53EB;&#x63A8;&#x6A21;&#x5F0F;&#x548C;&#x62C9;&#x6A21;&#x5F0F;&#x3002;</p>
+<ul>
+<li>&#x63A8;&#x6A21;&#x5F0F;</li>
+<li>&#x62C9;&#x6A21;&#x5F0F;</li>
+</ul>
+<p>&#x63A8;&#x6A21;&#x5F0F;&#x5373;RabbitMQ&#x670D;&#x52A1;&#x5668;&#x6E90;&#x6E90;&#x4E0D;&#x65AD;&#x7684;&#x81EA;&#x52A8;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x7ED9;&#x6D88;&#x8D39;&#x8005;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x800C;&#x62C9;&#x6A21;&#x5F0F;&#x9700;&#x8981;&#x6D88;&#x8D39;&#x8005;&#x624B;&#x52A8;&#x7684;&#x4E00;&#x4E2A;&#x4E2A;&#x62C9;&#x53D6;&#x6D88;&#x606F;&#x3002;</p>
+<h3 id="&#x63A8;&#x6A21;&#x5F0F;">&#x63A8;&#x6A21;&#x5F0F;</h3>
+<p>&#x6D88;&#x8D39;&#x8005;&#x4F7F;&#x7528; <code>channel.basicConsume</code> &#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x6D88;&#x606F;&#x7684;&#x81EA;&#x52A8;&#x63A8;&#x9001;&#x3002;</p>
+<p>API&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function">String <span class="hljs-title">basicConsume</span><span class="hljs-params">(String queue, <span class="hljs-keyword">boolean</span> autoAck, Consumer callback)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<p>queue&#xFF1A;</p>
+<p>&#x200B;    &#x961F;&#x5217;&#x540D;&#x79F0;</p>
+<p>autoAck&#xFF1A;</p>
+<p>&#x200B;    &#x6D88;&#x606F;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x786E;&#x8BA4;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;true&#xFF0C;&#x5373;&#x81EA;&#x52A8;&#x786E;&#x8BA4;&#x3002;&#x8BBE;&#x7F6E;&#x4E3A;false&#x6539;&#x4E3A;&#x624B;&#x52A8;&#x786E;&#x8BA4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7CFB;&#x7EDF;&#x66F4;&#x52A0;&#x5065;&#x58EE;&#x3002;</p>
+<p>callback&#xFF1A;</p>
+<p>&#x200B;    Consumer &#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x8BA2;&#x9605;&#x961F;&#x5217;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x8BE5;&#x63A5;&#x53E3;&#x63A5;&#x6536;&#x901A;&#x77E5;&#x6D88;&#x606F;&#x3002;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x56DE;&#x8C03;&#x7684;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x8FC7;&#x957F;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x5C06;&#x5EF6;&#x8FDF;&#x5C06;&#x6D88;&#x606F;&#x5206;&#x53D1;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x9891;&#x9053;&#x4E0A;&#x7684;&#x5176;&#x5B83;&#x4F7F;&#x7528;&#x8005;&#x3002;</p>
+<p>&#x200B;    DefaultConsumer &#x662F;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x7A7A;&#x5B9E;&#x73B0;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;DefaultConsumer &#x5B50;&#x7C7B;&#x5316;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x903B;&#x8F91;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">boolean</span> autoACK = <span class="hljs-keyword">false</span>;
+channel.basicQos(<span class="hljs-number">100</span>);
+channel.basicConsume(queueName,autoACK,<span class="hljs-keyword">new</span> MyConsumer(channel));
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyConsumer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DefaultConsumer</span></span>{
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyConsumer</span><span class="hljs-params">(Channel channel)</span> </span>{
+            <span class="hljs-keyword">super</span>(channel);
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleDelivery</span><span class="hljs-params">(String consumerTag, Envelope envelope, 
+                                   AMQP.BasicProperties properties, <span class="hljs-keyword">byte</span>[] body)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+            <span class="hljs-comment">//&#x63A5;&#x6536;&#x6D88;&#x606F;</span>
+            String message = <span class="hljs-keyword">new</span> String(body);
+            <span class="hljs-comment">//&#x5904;&#x7406;&#x6D88;&#x606F;</span>
+            handleMessage(message);
+            <span class="hljs-comment">//&#x786E;&#x8BA4;&#x6D88;&#x606F;</span>
+            getChannel().basicAck(envelope.getDeliveryTag(),<span class="hljs-keyword">false</span>);
+        }
+    }
+</code></pre>
+<p><strong>Qos &#x53C2;&#x6570;</strong> </p>
+<p>&#x200B;    &#x91C7;&#x7528;&#x63A8;&#x6A21;&#x5F0F;&#x83B7;&#x53D6;&#x6D88;&#x606F;&#xFF0C;&#x6D88;&#x606F;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x9001;&#x5230;&#x6D88;&#x8D39;&#x8005;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;<strong>&#x63A8;&#x6A21;&#x5F0F;&#x53D7; Qos &#x53C2;&#x6570;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x5373;&#x672A;&#x786E;&#x8BA4;&#x7684;&#x6D88;&#x606F;&#x4E0A;&#x9650;</strong>&#x3002;&#x5F53;&#x672A;&#x786E;&#x8BA4;&#x7684;&#x6D88;&#x606F;&#x6570;&#x91CF;&#x8FBE;&#x5230;&#x8BBE;&#x7F6E;&#x7684;&#x4E0A;&#x9650;&#x540E;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5C06;&#x4E0D;&#x518D;&#x63A8;&#x9001;&#x6D88;&#x606F;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x76F4;&#x5230;&#x672A;&#x786E;&#x8BA4;&#x7684;&#x6D88;&#x606F;&#x6570;&#x91CF;&#x4F4E;&#x4E8E;&#x4E0A;&#x9650;&#x3002;&#x672A;&#x786E;&#x8BA4;&#x6D88;&#x606F;&#x7684;&#x9600;&#x503C;&#x8303;&#x56F4;&#x662F;0&#x5230; 65535&#xFF0C;&#x8BBE;&#x7F6E; Qos &#x9009;&#x9879;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x5F88;&#x597D;&#x7684;&#x9650;&#x6D41;&#x4F5C;&#x7528;&#xFF0C;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F5C;&#x4E3A;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;MQ&#x4E2D;&#x63A8;&#x9001;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x5904;&#x7406;&#x5E76;&#x786E;&#x8BA4;&#xFF0C;&#x5982;&#x679C;&#x6D88;&#x606F;&#x4EA7;&#x751F;&#x7684;&#x901F;&#x5EA6;&#x5927;&#x4E8E;&#x6D88;&#x8D39;&#x7684;&#x901F;&#x5EA6;&#xFF0C;&#x90A3;&#x4E48;&#x6D88;&#x8D39;&#x8005;&#x672A;&#x5904;&#x7406;&#x7684;&#x6D88;&#x606F;&#x548C;&#x4EFB;&#x52A1;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6D88;&#x8D39;&#x8005;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x200B;    &#x8BBE;&#x7F6E;Qos &#x9600;&#x503C;&#x540E;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x672A;&#x786E;&#x8BA4;&#x7684;&#x6D88;&#x606F;&#x8FBE;&#x5230;&#x9600;&#x503C;&#xFF0C;&#x8BF4;&#x660E;&#x6D88;&#x8D39;&#x8005;&#x6CA1;&#x6709;&#x6765;&#x7684;&#x53CA;&#x5904;&#x7406;&#x8FD9;&#x4E48;&#x591A;&#x6D88;&#x606F;&#xFF0C;&#x6D88;&#x606F;&#x6682;&#x4E14;&#x5B58;&#x5728;MQ&#x4E2D;&#xFF0C;&#x8D77;&#x5230;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x9650;&#x6D41;&#x548C;&#x524A;&#x5CF0;&#x4F5C;&#x7528;&#x3002;</p>
+<h3 id="&#x62C9;&#x6A21;&#x5F0F;">&#x62C9;&#x6A21;&#x5F0F;</h3>
+<p>&#x6D88;&#x8D39;&#x8005;&#x4F7F;&#x7528; <code>channel.basicGet</code> &#x65B9;&#x6CD5;&#x624B;&#x52A8;&#x62C9;&#x53D6;&#x6D88;&#x606F;&#x3002;</p>
+<p>API&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function">GetResponse <span class="hljs-title">basicGet</span><span class="hljs-params">(String queue, <span class="hljs-keyword">boolean</span> autoAck)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x62C9;&#x53D6;&#x6D88;&#x606F;</span>
+GetResponse mqResponse = channel.basicGet(queueName, <span class="hljs-keyword">false</span>);
+<span class="hljs-comment">//&#x83B7;&#x53D6;&#x6D88;&#x606F;&#x4F53;</span>
+<span class="hljs-keyword">byte</span>[] body = mqResponse.getBody();
+</code></pre>
+<p>&#x6CE8;&#xFF1A;</p>
+<p>&#x200B;    <strong>&#x62C9;&#x6A21;&#x5F0F;&#x4E0D;&#x53D7; Qos &#x53C2;&#x6570;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x53EA;&#x8981;&#x961F;&#x5217;&#x4E2D;&#x6709;&#x672A;&#x786E;&#x8BA4;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x5C31;&#x80FD;&#x62C9;&#x53D6;&#x6210;&#x529F;&#x3002;</strong> </p>
+<h3 id="&#x786E;&#x8BA4;&#x6D88;&#x606F;">&#x786E;&#x8BA4;&#x6D88;&#x606F;</h3>
+<p>&#x200B;    &#x6D88;&#x8D39;&#x8005;&#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x81EA;&#x52A8;&#x786E;&#x8BA4;&#xFF0C;&#x5373;&#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#x7ACB;&#x5373;&#x81EA;&#x52A8;&#x786E;&#x8BA4;&#xFF0C;&#x5982;&#x679C;&#x6D88;&#x606F;&#x6CA1;&#x6709;&#x88AB;&#x6D88;&#x8D39;&#x8005;&#x6B63;&#x5E38;&#x5904;&#x7406;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x6D88;&#x606F;&#x4E5F;&#x7B97;&#x4E22;&#x5931;&#x4E86;&#x3002;&#x5728;&#x83B7;&#x53D6;&#x6D88;&#x606F;&#x65F6;&#x53EF;&#x4EE5;&#x5C06;&#x81EA;&#x52A8;&#x786E;&#x8BA4;&#x5173;&#x95ED;&#xFF0C;&#x5904;&#x7406;&#x5B8C;&#x6D88;&#x606F;&#x540E;&#x518D;&#x624B;&#x52A8;&#x786E;&#x8BA4;&#x6D88;&#x606F;&#x63A5;&#x53D7;&#x6210;&#x529F;&#x3002;</p>
+<p>API&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x6D88;&#x606F;&#x786E;&#x8BA4;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">basicAck</span><span class="hljs-params">(<span class="hljs-keyword">long</span> deliveryTag, <span class="hljs-keyword">boolean</span> multiple)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<p>deliveryTag &#xFF1A;</p>
+<p>&#x200B;    deliveryTag &#x662F;&#x6D88;&#x606F;&#x6807;&#x8BC6;&#xFF0C;&#x4EE3;&#x8868;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x3002;</p>
+<p>multiple&#xFF1A;</p>
+<p>&#x200B;    false &#x8868;&#x793A;&#x53EA;&#x786E;&#x8BA4;deliveryTag &#x8FD9;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;true &#x8868;&#x793A;&#x786E;&#x8BA4; deliveryTag &#x7F16;&#x53F7;&#x53CA;&#x4E4B;&#x524D;&#x7684;&#x6240;&#x6709;&#x672A;&#x786E;&#x8BA4;&#x7684;&#x6D88;&#x606F;&#x3002;</p>
+<h3 id="&#x62D2;&#x7EDD;&#x6D88;&#x606F;">&#x62D2;&#x7EDD;&#x6D88;&#x606F;</h3>
+<p>&#x6D88;&#x8D39;&#x8005;&#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x8FDB;&#x884C;&#x62D2;&#x7EDD;&#xFF0C;&#x4F7F;&#x7528; <code>Basic.Reject</code> &#x62D2;&#x7EDD;&#x5355;&#x6761;&#x6D88;&#x606F; &#x6216; <code>Basic.Nack</code> &#x62D2;&#x7EDD;&#x591A;&#x6761;&#x6D88;&#x606F;&#x3002;</p>
+<p>API&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x5355;&#x6761;&#x62D2;&#x7EDD;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">basicReject</span><span class="hljs-params">(<span class="hljs-keyword">long</span> deliveryTag, <span class="hljs-keyword">boolean</span> requeue)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+<span class="hljs-comment">//&#x6279;&#x91CF;&#x62D2;&#x7EDD;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">basicNack</span><span class="hljs-params">(<span class="hljs-keyword">long</span> deliveryTag, <span class="hljs-keyword">boolean</span> multiple, <span class="hljs-keyword">boolean</span> requeue)</span> <span class="hljs-keyword">throws</span> IOException</span>;
+</code></pre>
+<p>deliveryTag &#xFF1A;</p>
+<p>&#x200B;    deliveryTag &#x662F;&#x6D88;&#x606F;&#x6807;&#x8BC6;&#xFF0C;&#x4EE3;&#x8868;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x7C7B;&#x578B;&#x662F;64&#x4F4D;&#x957F;&#x6574;&#x578B;&#xFF0C;&#x4ECE;1&#x5F00;&#x59CB;&#x9012;&#x589E;&#x3002;</p>
+<p>requeue &#xFF1A;</p>
+<p>&#x200B;    &#x62D2;&#x7EDD;&#x540E;&#x662F;&#x5426;&#x91CD;&#x65B0;&#x5165;&#x961F;&#xFF0C;true&#x8868;&#x793A;&#x91CD;&#x65B0;&#x5B58;&#x5165;&#x961F;&#x5217;&#xFF0C;false&#x8868;&#x793A;&#x4ECE;&#x961F;&#x5217;&#x79FB;&#x9664;&#x8BE5;&#x6D88;&#x606F;&#x3002;</p>
+<p>multiple&#xFF1A;</p>
+<p>&#x200B;    &#x7528;&#x4E8E;&#x62D2;&#x7EDD;&#x591A;&#x4E2A;&#x6D88;&#x606F;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;true&#x8868;&#x793A;&#x62D2;&#x7EDD; deliveryTag &#x7F16;&#x53F7;&#x53CA;&#x4E4B;&#x524D;&#x7684;&#x6240;&#x6709;&#x672A;&#x88AB;&#x786E;&#x8BA4;&#x7684;&#x6D88;&#x606F;&#xFF0C;false &#x5219;&#x4EC5;&#x4EC5;&#x62D2;&#x7EDD;deliveryTag &#x8FD9;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x548C; basicReject &#x65B9;&#x6CD5;&#x76F8;&#x540C;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x5355;&#x6761;&#x62D2;&#x7EDD;</span>
+channel.basicReject(deliveryTag,<span class="hljs-keyword">false</span>);
+<span class="hljs-comment">//&#x6279;&#x91CF;&#x62D2;&#x7EDD;</span>
+channel.basicNack(deliveryTag,<span class="hljs-keyword">true</span>,<span class="hljs-keyword">false</span>);
+</code></pre>
+<p>&#x6CE8;:</p>
+<p>&#x200B;    &#x6D88;&#x606F;&#x88AB;&#x62D2;&#x7EDD;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x91CD;&#x65B0;&#x5165;&#x961F;&#xFF0C;&#x4E0D;&#x989D;&#x5916;&#x5904;&#x7406;&#xFF0C;&#x6D88;&#x606F;&#x5C06;&#x4F1A;&#x4E22;&#x5F03;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x6B7B;&#x4FE1;&#x4EA4;&#x6362;&#x5668;/&#x961F;&#x5217;&#x6765;&#x6536;&#x96C6;&#x6D88;&#x8D39;&#x8005;&#x62D2;&#x7EDD;&#x7684;&#x6D88;&#x606F;&#x3002;</p>
+<h2 id="38-&#x865A;&#x62DF;&#x4E3B;&#x673A;-vhost">3.8 &#x865A;&#x62DF;&#x4E3B;&#x673A; vhost</h2>
+<p>&#x200B;    AMQ&#x4E2D;&#x7684;&#x865A;&#x62DF;&#x4E3B;&#x673A;&#x7528;&#x4E8E;&#x903B;&#x8F91;&#x9694;&#x79BB;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;vhost &#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x5C0F;&#x578B;RabbitMQ&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x72EC;&#x7ACB;&#x7684;&#x4EA4;&#x6362;&#x5668;&#x3001;&#x961F;&#x5217;&#x4EE5;&#x53CA;&#x7ED1;&#x5B9A;&#x5173;&#x7CFB;&#xFF0C;&#x751A;&#x81F3;&#x662F;&#x901A;&#x9053;&#x548C;&#x8FDE;&#x63A5;&#xFF0C;vhost  &#x4E4B;&#x95F4;&#x662F;&#x7EDD;&#x5BF9;&#x9694;&#x79BB;&#x7684;&#xFF0C;&#x4E0D;&#x540C; vhost &#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x6362;&#x5668;&#x548C;&#x961F;&#x5217;&#x662F;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;&#x7684;&#x3002;</p>
+<p>&#x200B;    RabbitMQ&#x9ED8;&#x8BA4;&#x521B;&#x5EFA;&#x7684;vhost &#x4E3A;&#x201C;/&#x201D;&#xFF0C;&#x5982;&#x679C;&#x4E1A;&#x52A1;&#x4E0A;&#x4E0D;&#x9700;&#x8981;&#x903B;&#x8F91;&#x9694;&#x79BB;&#xFF0C;&#x90A3;&#x4E48;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;vhost &#x4E5F;&#x662F;&#x5408;&#x7406;&#x7684;&#x3002;&#x4F46;&#x5F53;&#x4E1A;&#x52A1;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x89C4;&#x6A21;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5EFA;&#x8BAE;&#x6309;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x5F52;&#x7C7B;&#x533A;&#x5206;&#xFF0C;&#x8FDB;&#x884C;&#x9694;&#x79BB;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5B89;&#x5168;&#xFF0C;&#x8FD8;&#x4FBF;&#x4E8E;&#x8FC1;&#x79FB;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2. AMQP协议.html" class="navigation navigation-prev " aria-label="Previous page: 2. AMQP协议">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4. 进阶开发.html" class="navigation navigation-next " aria-label="Next page: 4. 进阶开发">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3. 基本概念","level":"1.4","depth":1,"next":{"title":"4. 进阶开发","level":"1.5","depth":1,"path":"target/4. 进阶开发.md","ref":"./target/4. 进阶开发.md","articles":[]},"previous":{"title":"2. AMQP协议","level":"1.3","depth":1,"path":"target/2. AMQP协议.md","ref":"./target/2. AMQP协议.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"target/3. 基本概念.md","mtime":"2021-01-17T10:21:37.564Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-17T10:22:34.335Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
